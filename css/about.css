@@ -427,10 +427,9 @@
 @media (max-width: 640px) {
   .portfolio-grid {
     display: flex;
-    align-items: flex-start;   /* 카드를 늘리지 않고 컨텐츠 높이로 유지 */
+    align-items: flex-start;
     grid-template-columns: none;
     gap: 14px;
-    /* 세로 잘림 방지: overflow-x 만 scroll, overflow-y 는 visible 허용하도록 clip */
     overflow-x: auto;
     overflow-y: visible;
     overscroll-behavior-x: contain;
@@ -446,34 +445,18 @@
   .portfolio-item {
     flex: 0 0 78%;
     max-width: 78%;
-    display: flex;
-    flex-direction: column;
     align-self: flex-start;
     scroll-snap-align: start;
+    /* display/flex 구조는 base (display:block) 그대로 유지 — 자식은 자연 스택 */
   }
   .portfolio-item:hover { transform: none; }
   .portfolio-item:last-child {
     margin-right: calc(var(--container-pad) - 14px);
   }
 
-  /* 썸네일: 카드 실제 width 기준의 4:3 보장 (padding-bottom 트릭) */
-  .portfolio-thumb {
-    flex: 0 0 auto;
-    width: 100%;
-    height: 0;
-    padding-bottom: 75%;
-    aspect-ratio: auto;
-  }
+  /* 썸네일 비율은 base의 padding-top: 75% 를 그대로 사용 (모바일에서 재정의 X) */
 
   .portfolio-info {
-    flex: 0 0 auto;
     padding: 14px 2px 4px;
-  }
-
-  /* 긴 프로젝트명이 다음 줄로 넘어가 카드 높이가 달라지는 문제 방지 */
-  .portfolio-name {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }

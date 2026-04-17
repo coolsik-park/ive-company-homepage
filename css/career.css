@@ -1,157 +1,310 @@
 /* ========================================================================
-   Career Section
+   Career Section — refined
    ======================================================================== */
 .career {
+  position: relative;
   background: var(--color-bg-light);
   color: var(--color-text-dark);
+  overflow: hidden;
 }
+
+/* 은은한 그라디언트 배경 포인트 */
+.career::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(600px 400px at 85% 15%, rgba(0, 87, 255, 0.05) 0%, transparent 70%),
+    radial-gradient(500px 360px at 10% 85%, rgba(0, 87, 255, 0.04) 0%, transparent 70%);
+  z-index: 0;
+}
+.career > .container { position: relative; z-index: 1; }
 
 .career .section-desc { color: #555; }
 
-/* ---------- Values Grid (인재상) ---------- */
+.career-lead {
+  max-width: 720px;
+  margin-bottom: 72px;
+}
+
+/* ------------------------------------------------------------------
+   Values — 인재상
+   ------------------------------------------------------------------ */
+.values-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.values-title {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  color: var(--color-text-dark);
+}
+
 .values-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 16px;
-  margin-bottom: 120px;
+  gap: 16px;
+  counter-reset: valueCounter;
+  margin-bottom: 140px;
 }
 
 .value-card {
+  counter-increment: valueCounter;
   position: relative;
-  padding: 40px 28px;
+  padding: 48px 28px 32px;
   background: #fff;
-  border: 1px solid var(--color-border-light);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
   transition:
     transform var(--dur-base) var(--ease-out),
     border-color var(--dur-base) var(--ease-out),
     box-shadow var(--dur-base) var(--ease-out);
 }
+
+/* 왼쪽 액센트 바 — 기본은 얇게, hover 시 꽉 채움 */
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--color-accent);
+  transform: scaleY(0.35);
+  transform-origin: top;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+/* 카드 번호 (01, 02, 03, 04) */
+.value-card::after {
+  content: '0' counter(valueCounter);
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: rgba(0, 0, 0, 0.18);
+  transition: color var(--dur-base) var(--ease-out);
+}
+
 .value-card:hover {
   transform: translateY(-6px);
-  border-color: var(--color-accent);
-  box-shadow: 0 16px 48px -20px rgba(0, 87, 255, 0.25);
+  border-color: rgba(0, 87, 255, 0.25);
+  box-shadow: 0 24px 60px -30px rgba(0, 87, 255, 0.3);
 }
+.value-card:hover::before { transform: scaleY(1); }
+.value-card:hover::after { color: var(--color-accent); }
 
 .value-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
   color: var(--color-accent);
   background: rgba(0, 87, 255, 0.08);
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  transition: background var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+.value-card:hover .value-icon {
+  background: var(--color-accent);
+  color: #fff;
+  transform: rotate(8deg) scale(1.05);
 }
 
 .value-card h3 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.3px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: var(--color-text-dark);
 }
 
 .value-card p {
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.75;
   color: #666;
 }
 
-/* ---------- Job List ---------- */
+/* ------------------------------------------------------------------
+   Jobs — 채용공고
+   ------------------------------------------------------------------ */
 .job-head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.job-head::before {
+  content: '';
+  display: none;
 }
 
 .job-list {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  gap: 12px;
 }
 
 .job-item {
+  position: relative;
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr auto;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr auto;
   align-items: center;
   gap: 24px;
-  padding: 28px 8px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 28px 32px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
   color: var(--color-text-dark);
   text-decoration: none;
-  transition: background var(--dur-fast) var(--ease-out), padding var(--dur-fast) var(--ease-out);
+  overflow: hidden;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+/* hover 시 왼쪽에서 파란 액센트 바 + 살짝 위로 */
+.job-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--color-accent);
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform var(--dur-fast) var(--ease-out);
 }
 .job-item:hover {
-  background: rgba(0, 87, 255, 0.04);
-  padding-left: 16px;
+  transform: translateY(-2px);
+  border-color: rgba(0, 87, 255, 0.3);
+  box-shadow: 0 20px 48px -24px rgba(0, 87, 255, 0.3);
 }
+.job-item:hover::before { transform: scaleY(1); }
 .job-item:hover .job-title { color: var(--color-accent); }
-.job-item:hover .job-arrow { transform: translateX(6px); color: var(--color-accent); }
+.job-item:hover .job-arrow {
+  background: var(--color-accent);
+  color: #fff;
+  transform: translateX(4px) rotate(-8deg);
+}
 
 .job-title {
   font-size: clamp(18px, 1.8vw, 22px);
   font-weight: 700;
   letter-spacing: -0.3px;
+  color: var(--color-text-dark);
   transition: color var(--dur-fast) var(--ease-out);
 }
 
 .job-meta {
-  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.3px;
-  color: #666;
+  color: #555;
 }
 .job-meta .meta-label {
-  display: block;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 2px;
-  color: #999;
+  color: #9a9a9a;
   text-transform: uppercase;
-  margin-bottom: 4px;
 }
 
-.job-deadline.urgent { color: var(--color-accent); }
+.job-deadline.urgent {
+  color: var(--color-accent);
+}
+.job-deadline.urgent .meta-label { color: var(--color-accent); }
 
+/* CTA 원형 화살표 */
 .job-arrow {
-  font-size: 22px;
-  color: #999;
-  transition: transform var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  color: var(--color-text-dark);
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 50%;
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
 }
 
+/* 빈 상태 */
 .job-empty {
-  padding: 60px 0;
+  padding: 80px 32px;
   text-align: center;
   font-size: 16px;
+  line-height: 1.8;
   color: #666;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
 }
-.job-empty a { color: var(--color-accent); font-weight: 600; }
-.job-empty a:hover { text-decoration: underline; }
+.job-empty a {
+  color: var(--color-accent);
+  font-weight: 600;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+.job-empty a:hover { opacity: 0.85; }
 
-/* ---------- Responsive ---------- */
+/* ------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------ */
 @media (max-width: 1024px) {
-  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .values-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
   .job-item {
     grid-template-columns: 1fr auto;
     grid-template-areas:
       "title arrow"
       "meta  arrow";
-    gap: 6px 16px;
+    padding: 24px 24px 24px 28px;
+    gap: 10px 16px;
   }
   .job-title { grid-area: title; }
   .job-arrow { grid-area: arrow; align-self: center; }
-  .job-meta  { grid-area: meta; display: inline-block; margin-right: 16px; font-size: 12px; }
+  .job-meta {
+    grid-area: meta;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    font-size: 13px;
+  }
   .job-meta .meta-label { display: inline; margin-right: 4px; }
-  .job-meta + .job-meta { margin-left: 0; }
 }
 
 @media (max-width: 640px) {
-  .values-grid { grid-template-columns: 1fr; margin-bottom: 80px; }
-  .value-card { padding: 32px 24px; }
+  .values-head { margin-bottom: 24px; }
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 96px;
+  }
+  .value-card { padding: 36px 24px 28px; }
+  .value-card::after { top: 16px; right: 20px; }
+  .job-item { padding: 22px 20px 22px 24px; }
+  .job-arrow { width: 38px; height: 38px; font-size: 16px; }
+  .job-meta { gap: 2px 16px; }
 }

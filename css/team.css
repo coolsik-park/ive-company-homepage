@@ -193,7 +193,37 @@
     min-width: 20px;
   }
 
-  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  /* 팀 카드도 좌우 슬라이드로 — 다음 카드 살짝 보이는 peek */
+  .team-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    grid-template-columns: none;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: visible;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-inline: calc(var(--container-pad) * -1);
+    padding: 2px var(--container-pad) 14px;
+    scroll-padding-left: var(--container-pad);
+  }
+  .team-grid::-webkit-scrollbar { display: none; }
+
+  .team-card {
+    flex: 0 0 62%;
+    max-width: 62%;
+    scroll-snap-align: start;
+  }
+  .team-card:last-child {
+    margin-right: calc(var(--container-pad) - 12px);
+  }
+
+  /* 필터로 가려진 카드는 슬라이더 폭에서 제외 (이미 width/height 0 처리됨) */
+  .team-card.is-hidden { flex: 0 0 0; max-width: 0; }
+
   .team-overlay { transform: translateY(0); opacity: 1; padding: 14px; }
   .team-name { font-size: 15px; }
   .team-role { font-size: 11px; letter-spacing: 1px; }

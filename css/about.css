@@ -405,6 +405,32 @@
   .numbers-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
 }
 
+/* 모바일: 포트폴리오를 좌우 슬라이드 (다음 카드 살짝 보이는 peek) */
 @media (max-width: 640px) {
-  .portfolio-grid { grid-template-columns: 1fr; }
+  .portfolio-grid {
+    display: flex;
+    grid-template-columns: none;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* 컨테이너 패딩 밖까지 확장해서 카드가 화면 끝에서 시작/끝나게 */
+    margin-inline: calc(var(--container-pad) * -1);
+    padding: 4px var(--container-pad) 14px;
+    scroll-padding-left: var(--container-pad);
+  }
+  .portfolio-grid::-webkit-scrollbar { display: none; }
+
+  .portfolio-item {
+    flex: 0 0 78%;
+    max-width: 78%;
+    scroll-snap-align: start;
+  }
+  .portfolio-item:hover { transform: none; }
+  .portfolio-item:last-child {
+    /* 마지막 카드도 끝까지 스냅되도록 약간의 여유 */
+    margin-right: calc(var(--container-pad) - 14px);
+  }
+  .portfolio-thumb { aspect-ratio: 4 / 3; }
 }

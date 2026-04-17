@@ -207,46 +207,56 @@
     gap: 20px;
   }
 
-  /* 모바일: 탭을 segmented control 느낌으로 눈에 띄게 */
+  /* 모바일: 단단한 흰 바탕 segmented control — 확실히 보이게 */
   .biz-tablist {
-    position: sticky;
-    top: 76px;
-    z-index: 5;
+    position: static;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 6px;
-    padding: 6px;
-    background: rgba(247, 247, 247, 0.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 999px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
+    align-self: stretch;
+    gap: 4px;
+    padding: 4px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px -8px rgba(0, 0, 0, 0.08);
+    overflow: visible;
   }
-  .biz-tablist::-webkit-scrollbar { display: none; }
 
   .biz-tab {
     flex: 1 1 0;
     min-width: 0;
     justify-content: center;
-    padding: 10px 14px;
+    padding: 12px 8px;
     font-size: 13px;
+    font-weight: 600;
+    color: #666;
     background: transparent;
     border: none;
-    border-radius: 999px;
+    border-radius: 8px;
     box-shadow: none;
-    scroll-snap-align: start;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  .biz-tab:hover { transform: none; background: rgba(0, 0, 0, 0.04); }
+  .biz-tab:hover {
+    transform: none;
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--color-text-dark);
+  }
+  .biz-tab-label {
+    flex: none;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .biz-tab-arrow { display: none; }
+
   .biz-tab.is-active {
     background: var(--color-text-dark);
     color: var(--color-text-white);
-    box-shadow: 0 6px 16px -10px rgba(0, 0, 0, 0.6);
+    border-color: transparent;
+    box-shadow: 0 4px 12px -6px rgba(0, 0, 0, 0.4);
   }
 
   .biz-panel { padding: 32px 24px; border-radius: 12px; }
@@ -256,9 +266,13 @@
 }
 
 @media (max-width: 480px) {
-  .biz-tablist { top: 68px; }
-  .biz-tab { font-size: 12px; letter-spacing: -0.3px; padding: 10px 10px; }
-  .biz-panel { padding: 28px 20px; }
+  .biz-tab {
+    font-size: 12px;
+    letter-spacing: -0.3px;
+    padding: 11px 6px;
+  }
+  .biz-panel { padding: 26px 18px; }
+  .biz-panel-title { font-size: 28px; }
 }
 
 /* ------------------------------------------------------------------

@@ -48,6 +48,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  /* 한글 어절 단위로 줄바꿈 (마지막 글자만 떨어지는 현상 방지) */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 body.nav-open { overflow: hidden; }
 

@@ -409,6 +409,7 @@
 @media (max-width: 640px) {
   .portfolio-grid {
     display: flex;
+    align-items: stretch;
     grid-template-columns: none;
     gap: 14px;
     overflow-x: auto;
@@ -425,6 +426,8 @@
   .portfolio-item {
     flex: 0 0 78%;
     max-width: 78%;
+    display: flex;
+    flex-direction: column;
     scroll-snap-align: start;
   }
   .portfolio-item:hover { transform: none; }
@@ -432,5 +435,14 @@
     /* 마지막 카드도 끝까지 스냅되도록 약간의 여유 */
     margin-right: calc(var(--container-pad) - 14px);
   }
-  .portfolio-thumb { aspect-ratio: 4 / 3; }
+  /* 모든 카드의 썸네일 높이를 뷰포트 기준으로 통일 (aspect-ratio 대체) */
+  .portfolio-thumb {
+    flex: 0 0 auto;
+    width: 100%;
+    height: calc(78vw * 3 / 4);
+    aspect-ratio: auto;
+  }
+  .portfolio-info {
+    flex: 1 1 auto;
+  }
 }

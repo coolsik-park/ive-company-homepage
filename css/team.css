@@ -168,10 +168,39 @@
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
   .team-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .team-filter { flex-wrap: wrap; }
-  .team-tab { padding: 8px 16px; font-size: 13px; }
 }
 
 @media (max-width: 640px) {
-  .team-overlay { transform: translateY(0); opacity: 1; padding: 16px; }
+  /* 모바일: 필터를 가로 전체 폭의 segmented control 로 */
+  .team-filter {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    gap: 4px;
+    margin: 8px 0 28px;
+  }
+  .team-tab {
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    padding: 10px 8px;
+    font-size: 13px;
+    letter-spacing: -0.2px;
+  }
+  .team-tab-count {
+    font-size: 10px;
+    padding: 1px 6px;
+    min-width: 20px;
+  }
+
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .team-overlay { transform: translateY(0); opacity: 1; padding: 14px; }
+  .team-name { font-size: 15px; }
+  .team-role { font-size: 11px; letter-spacing: 1px; }
+  .team-country { font-size: 10px; letter-spacing: 1.5px; }
+}
+
+@media (max-width: 380px) {
+  .team-tab { padding: 9px 4px; font-size: 12px; }
+  .team-tab-count { display: none; }
 }

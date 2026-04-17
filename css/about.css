@@ -204,26 +204,61 @@
 @media (max-width: 960px) {
   .biz-tabs {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
+
+  /* 모바일: 탭을 segmented control 느낌으로 눈에 띄게 */
   .biz-tablist {
-    position: static;
+    position: sticky;
+    top: 76px;
+    z-index: 5;
+    display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 6px;
+    padding: 6px;
+    background: rgba(247, 247, 247, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
     overflow-x: auto;
-    gap: 8px;
-    padding-bottom: 4px;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
   }
   .biz-tablist::-webkit-scrollbar { display: none; }
+
   .biz-tab {
-    flex: 0 0 auto;
-    padding: 12px 20px;
-    font-size: 14px;
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    padding: 10px 14px;
+    font-size: 13px;
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    box-shadow: none;
+    scroll-snap-align: start;
   }
+  .biz-tab:hover { transform: none; background: rgba(0, 0, 0, 0.04); }
   .biz-tab-arrow { display: none; }
-  .biz-panel { padding: 36px 28px; }
-  .biz-block { grid-template-columns: 1fr; gap: 10px; }
+  .biz-tab.is-active {
+    background: var(--color-text-dark);
+    color: var(--color-text-white);
+    box-shadow: 0 6px 16px -10px rgba(0, 0, 0, 0.6);
+  }
+
+  .biz-panel { padding: 32px 24px; border-radius: 12px; }
+  .biz-panel-head { padding-bottom: 20px; margin-bottom: 20px; }
+  .biz-block { grid-template-columns: 1fr; gap: 8px; padding: 16px 0; }
   .biz-kicker { padding-top: 0; }
+}
+
+@media (max-width: 480px) {
+  .biz-tablist { top: 68px; }
+  .biz-tab { font-size: 12px; letter-spacing: -0.3px; padding: 10px 10px; }
+  .biz-panel { padding: 28px 20px; }
 }
 
 /* ------------------------------------------------------------------

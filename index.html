@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-ko="IVE Company — 기술과 사람을 연결하는 새로운 방법을 만듭니다." data-en="IVE Company — Connecting technology and people in a new way." content="IVE Company — 기술과 사람을 연결하는 새로운 방법을 만듭니다." />
+  <meta property="og:title" content="IVE Company" />
+  <meta property="og:description" content="WE BUILD THE FUTURE." />
+  <title>IVE Company — WE BUILD THE FUTURE.</title>
+
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/team.css" />
+  <link rel="stylesheet" href="css/career.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+
+  <link rel="icon" type="image/png" href="assets/images/ive_company_logo.png" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <a href="#home" class="logo" aria-label="IVE Company">
+      <img src="assets/images/ive_company_logo.png" alt="IVE Company" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" data-ko="Home" data-en="Home">Home</a></li>
+      <li><a href="#about" data-ko="About" data-en="About">About</a></li>
+      <li><a href="#team" data-ko="Team" data-en="Team">Team</a></li>
+      <li><a href="#career" data-ko="Career" data-en="Career">Career</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="lang-toggle" aria-label="언어 전환">
+        <span class="lang-opt" data-val="ko">KO</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-opt" data-val="en">EN</span>
+      </button>
+      <a href="#footer" class="btn-contact" data-ko="Contact" data-en="Contact">Contact</a>
+    </div>
+    <button class="hamburger" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ========== Section 01. HERO ========== -->
+  <section id="home" class="hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="assets/images/hero-fallback.jpg">
+      <!-- 추후 assets/videos/hero.mp4 교체 -->
+      <source src="assets/videos/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <span class="hero-label" data-ko="IVE COMPANY" data-en="IVE COMPANY">IVE COMPANY</span>
+      <h1 class="hero-title">
+        <span class="mask"><span data-ko="WE BUILD" data-en="WE BUILD">WE BUILD</span></span>
+        <span class="mask"><span data-ko="THE FUTURE." data-en="THE FUTURE.">THE FUTURE.</span></span>
+      </h1>
+      <p class="hero-sub"
+         data-ko="기술과 사람을 연결하는 새로운 방법을 만듭니다."
+         data-en="Connecting technology and people in a new way.">
+        기술과 사람을 연결하는 새로운 방법을 만듭니다.
+      </p>
+      <div class="hero-btns">
+        <a href="#about" class="btn-primary" data-ko="사업 알아보기" data-en="Explore Business">사업 알아보기</a>
+        <a href="#about" class="btn-outline" data-ko="회사 소개" data-en="About Us">회사 소개</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span data-ko="SCROLL" data-en="SCROLL">SCROLL</span>
+      <span class="arrow">↓</span>
+    </div>
+  </section>
+
+  <!-- ========== Section 02. ABOUT ========== -->
+  <section id="about" class="about">
+    <div class="container">
+      <span class="section-label" data-ko="ABOUT US" data-en="ABOUT US">ABOUT US</span>
+      <h2 class="section-title"
+          data-ko="IVE Company는<br>새로운 가치를 만듭니다."
+          data-en="IVE Company<br>creates new value.">
+        IVE Company는<br>새로운 가치를 만듭니다.
+      </h2>
+      <p class="section-desc"
+         data-ko="우리는 기술과 크리에이티브의 경계를 허물고, 사람 중심의 디지털 경험을 설계합니다. 브랜딩, 프로덕트, 서비스 — 모든 접점에서 IVE만의 감각을 전합니다."
+         data-en="We blur the lines between technology and creativity, designing people-centered digital experiences across branding, product, and service.">
+        우리는 기술과 크리에이티브의 경계를 허물고, 사람 중심의 디지털 경험을 설계합니다. 브랜딩, 프로덕트, 서비스 — 모든 접점에서 IVE만의 감각을 전합니다.
+      </p>
+
+      <!-- 사업 부문 탭 -->
+      <div class="biz-tabs">
+        <div class="biz-tablist" role="tablist" aria-label="사업 부문">
+          <button class="biz-tab is-active"
+                  role="tab" type="button"
+                  id="biz-tab-ive"
+                  aria-selected="true" aria-controls="biz-panel-ive"
+                  data-tab="ive">
+            <span class="biz-tab-label">IVE Company</span>
+            <span class="biz-tab-arrow" aria-hidden="true">→</span>
+          </button>
+          <button class="biz-tab"
+                  role="tab" type="button"
+                  id="biz-tab-skyblue"
+                  aria-selected="false" aria-controls="biz-panel-skyblue" tabindex="-1"
+                  data-tab="skyblue">
+            <span class="biz-tab-label">Skyblue</span>
+            <span class="biz-tab-arrow" aria-hidden="true">→</span>
+          </button>
+          <button class="biz-tab"
+                  role="tab" type="button"
+                  id="biz-tab-tripnjoy"
+                  aria-selected="false" aria-controls="biz-panel-tripnjoy" tabindex="-1"
+                  data-tab="tripnjoy">
+            <span class="biz-tab-label">TripnJoy</span>
+            <span class="biz-tab-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <div class="biz-panels">
+          <!-- IVE Company -->
+          <article class="biz-panel is-active"
+                   id="biz-panel-ive" role="tabpanel"
+                   aria-labelledby="biz-tab-ive"
+                   data-panel="ive">
+            <header class="biz-panel-head">
+              <span class="biz-panel-eyebrow" data-ko="BUSINESS UNIT" data-en="BUSINESS UNIT">BUSINESS UNIT</span>
+              <h3 class="biz-panel-title">IVE Company</h3>
+              <p class="biz-panel-lead"
+                 data-ko="기술 컨설팅과 통합, 그리고 SW 판매까지 — IT 전방위의 문제를 해결합니다."
+                 data-en="Technology consulting, integration, and software sales — we solve IT problems end-to-end.">
+                기술 컨설팅과 통합, 그리고 SW 판매까지 — IT 전방위의 문제를 해결합니다.
+              </p>
+            </header>
+
+            <div class="biz-block">
+              <span class="biz-kicker" data-ko="MOTO / MISSION" data-en="MOTO / MISSION">MOTO / MISSION</span>
+              <p class="biz-block-body"
+                 data-ko="사업을 통해서 궁극적으로 지향하는 바가 무엇인지?"
+                 data-en="What do we ultimately pursue through our business?">
+                사업을 통해서 궁극적으로 지향하는 바가 무엇인지?
+              </p>
+            </div>
+
+            <div class="biz-block">
+              <span class="biz-kicker" data-ko="사업영역" data-en="BUSINESS AREAS">사업영역</span>
+              <ul class="biz-list">
+                <li data-ko="IT Consulting (ISP, Security, ITSM)"
+                    data-en="IT Consulting (ISP, Security, ITSM)">IT Consulting (ISP, Security, ITSM)</li>
+                <li data-ko="IT Integration &amp; SW Sales"
+                    data-en="IT Integration &amp; SW Sales">IT Integration &amp; SW Sales</li>
+              </ul>
+            </div>
+
+            <div class="biz-block">
+              <span class="biz-kicker" data-ko="성공사례 및 예시 (보충설명)" data-en="SUCCESS CASES (TBD)">성공사례 및 예시 (보충설명)</span>
+              <ul class="biz-list">
+                <li data-ko="정부 R&amp;D 과제 제안서 작성"
+                    data-en="Government R&amp;D Proposal Writing">정부 R&amp;D 과제 제안서 작성</li>
+                <li data-ko="기업 거버넌스 설계 및 구축 (특허출원)"
+                    data-en="Corporate Governance Design &amp; Implementation (Patented)">기업 거버넌스 설계 및 구축 (특허출원)</li>
+                <li data-ko="핀테크 기업 전자금융 라이센스 취득"
+                    data-en="e-Finance License Acquisition for Fintech">핀테크 기업 전자금융 라이센스 취득</li>
+                <li data-ko="SW Sales" data-en="SW Sales">SW Sales</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Skyblue -->
+          <article class="biz-panel"
+                   id="biz-panel-skyblue" role="tabpanel"
+                   aria-labelledby="biz-tab-skyblue"
+                   data-panel="skyblue" hidden>
+            <header class="biz-panel-head">
+              <span class="biz-panel-eyebrow" data-ko="BUSINESS UNIT" data-en="BUSINESS UNIT">BUSINESS UNIT</span>
+              <h3 class="biz-panel-title">Skyblue</h3>
+              <p class="biz-panel-lead"
+                 data-ko="Skyblue 브랜드 소개 — 콘텐츠 준비중입니다."
+                 data-en="Skyblue brand overview — content in preparation.">
+                Skyblue 브랜드 소개 — 콘텐츠 준비중입니다.
+              </p>
+            </header>
+
+            <div class="biz-block">
+              <span class="biz-kicker" data-ko="MOTO / MISSION" data-en="MOTO / MISSION">MOTO / MISSION</span>
+              <p class="biz-block-body" data-ko="TBD" data-en="TBD">TBD</p>
+            </div>
+            <div class="biz-block">
+              <span class="biz-kicker" data-ko="사업영역" data-en="BUSINESS AREAS">사업영역</span>
+              <ul class="biz-list">
+                <li data-ko="TBD" data-en="TBD">TBD</li>
+              </ul>
+            </div>
+            <div class="biz-block">
+              <span class="biz-kicker" data-ko="성공사례" data-en="SUCCESS CASES">성공사례</span>
+              <ul class="biz-list">
+                <li data-ko="TBD" data-en="TBD">TBD</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- TripnJoy -->
+          <article class="biz-panel"
+                   id="biz-panel-tripnjoy" role="tabpanel"
+                   aria-labelledby="biz-tab-tripnjoy"
+                   data-panel="tripnjoy" hidden>
+            <header class="biz-panel-head">
+              <span class="biz-panel-eyebrow" data-ko="BUSINESS UNIT" data-en="BUSINESS UNIT">BUSINESS UNIT</span>
+              <h3 class="biz-panel-title">TripnJoy</h3>
+              <p class="biz-panel-lead"
+                 data-ko="TripnJoy 브랜드 소개 — 콘텐츠 준비중입니다."
+                 data-en="TripnJoy brand overview — content in preparation.">
+                TripnJoy 브랜드 소개 — 콘텐츠 준비중입니다.
+              </p>
+            </header>
+
+            <div class="biz-block">
+              <span class="biz-kicker" data-ko="MOTO / MISSION" data-en="MOTO / MISSION">MOTO / MISSION</span>
+              <p class="biz-block-body" data-ko="TBD" data-en="TBD">TBD</p>
+            </div>
+            <div class="biz-block">
+              <span class="biz-kicker" data-ko="사업영역" data-en="BUSINESS AREAS">사업영역</span>
+              <ul class="biz-list">
+                <li data-ko="TBD" data-en="TBD">TBD</li>
+              </ul>
+            </div>
+            <div class="biz-block">
+              <span class="biz-kicker" data-ko="성공사례" data-en="SUCCESS CASES">성공사례</span>
+              <ul class="biz-list">
+                <li data-ko="TBD" data-en="TBD">TBD</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- 포트폴리오 Grid -->
+      <div class="portfolio-head">
+        <span class="section-label" data-ko="SELECTED WORK" data-en="SELECTED WORK">SELECTED WORK</span>
+        <h3 class="portfolio-title"
+            data-ko="우리가 만든 것들"
+            data-en="Things we've built">
+          우리가 만든 것들
+        </h3>
+      </div>
+
+      <div class="portfolio-grid">
+        <a href="#" class="portfolio-item">
+          <div class="portfolio-thumb" style="background:linear-gradient(135deg,#0057FF 0%,#001a66 100%);"></div>
+          <div class="portfolio-info">
+            <span class="portfolio-cat" data-ko="Web" data-en="Web">Web</span>
+            <span class="portfolio-name" data-ko="Project Alpha" data-en="Project Alpha">Project Alpha</span>
+          </div>
+        </a>
+        <a href="#" class="portfolio-item">
+          <div class="portfolio-thumb" style="background:linear-gradient(135deg,#111 0%,#444 100%);"></div>
+          <div class="portfolio-info">
+            <span class="portfolio-cat" data-ko="Branding" data-en="Branding">Branding</span>
+            <span class="portfolio-name" data-ko="Project Beta" data-en="Project Beta">Project Beta</span>
+          </div>
+        </a>
+        <a href="#" class="portfolio-item">
+          <div class="portfolio-thumb" style="background:linear-gradient(135deg,#0057FF 0%,#77b2ff 100%);"></div>
+          <div class="portfolio-info">
+            <span class="portfolio-cat" data-ko="Product" data-en="Product">Product</span>
+            <span class="portfolio-name" data-ko="Project Gamma" data-en="Project Gamma">Project Gamma</span>
+          </div>
+        </a>
+        <a href="#" class="portfolio-item">
+          <div class="portfolio-thumb" style="background:linear-gradient(135deg,#222 0%,#0057FF 100%);"></div>
+          <div class="portfolio-info">
+            <span class="portfolio-cat" data-ko="Interactive" data-en="Interactive">Interactive</span>
+            <span class="portfolio-name" data-ko="Project Delta" data-en="Project Delta">Project Delta</span>
+          </div>
+        </a>
+        <a href="#" class="portfolio-item">
+          <div class="portfolio-thumb" style="background:linear-gradient(135deg,#0057FF 0%,#000 100%);"></div>
+          <div class="portfolio-info">
+            <span class="portfolio-cat" data-ko="Web" data-en="Web">Web</span>
+            <span class="portfolio-name" data-ko="Project Epsilon" data-en="Project Epsilon">Project Epsilon</span>
+          </div>
+        </a>
+        <a href="#" class="portfolio-item">
+          <div class="portfolio-thumb" style="background:linear-gradient(135deg,#333 0%,#999 100%);"></div>
+          <div class="portfolio-info">
+            <span class="portfolio-cat" data-ko="Campaign" data-en="Campaign">Campaign</span>
+            <span class="portfolio-name" data-ko="Project Zeta" data-en="Project Zeta">Project Zeta</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Section 03. NUMBERS ========== -->
+  <section id="numbers" class="numbers">
+    <div class="container">
+      <div class="numbers-grid">
+        <div class="num-item">
+          <span class="num-value" data-target="2018" data-plain="true">0</span>
+          <span class="num-label" data-ko="설립년도" data-en="Founded">설립년도</span>
+        </div>
+        <div class="num-item">
+          <span class="num-value" data-target="50">0</span><span class="num-plus">+</span>
+          <span class="num-label" data-ko="완료 프로젝트" data-en="Projects Delivered">완료 프로젝트</span>
+        </div>
+        <div class="num-item">
+          <span class="num-value" data-target="25">0</span><span class="num-plus">+</span>
+          <span class="num-label" data-ko="파트너사" data-en="Partners">파트너사</span>
+        </div>
+        <div class="num-item">
+          <span class="num-value" data-target="30">0</span><span class="num-plus">+</span>
+          <span class="num-label" data-ko="팀 멤버" data-en="Team Members">팀 멤버</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Section 04. TEAM ========== -->
+  <section id="team" class="team">
+    <div class="container">
+      <span class="section-label" data-ko="OUR TEAM" data-en="OUR TEAM">OUR TEAM</span>
+      <h2 class="section-title"
+          data-ko="최고의 팀이<br>최고의 결과를 만듭니다."
+          data-en="The best team<br>delivers the best outcome.">
+        최고의 팀이<br>최고의 결과를 만듭니다.
+      </h2>
+
+      <!-- 지역 필터 -->
+      <div class="team-filter" role="tablist" aria-label="팀 지역 필터">
+        <button class="team-tab is-active"
+                role="tab" type="button"
+                aria-selected="true" data-filter="all">
+          <span data-ko="전체" data-en="All">전체</span>
+          <span class="team-tab-count" data-count-for="all">4</span>
+        </button>
+        <button class="team-tab"
+                role="tab" type="button"
+                aria-selected="false" tabindex="-1" data-filter="korea">
+          <span data-ko="한국" data-en="Korea">한국</span>
+          <span class="team-tab-count" data-count-for="korea">3</span>
+        </button>
+        <button class="team-tab"
+                role="tab" type="button"
+                aria-selected="false" tabindex="-1" data-filter="vietnam">
+          <span data-ko="베트남" data-en="Vietnam">베트남</span>
+          <span class="team-tab-count" data-count-for="vietnam">1</span>
+        </button>
+      </div>
+
+      <div class="team-grid" data-active-filter="all">
+        <article class="team-card" data-country="korea">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=70" alt="CEO" loading="lazy" />
+            <div class="team-overlay">
+              <span class="team-name" data-ko="홍길동" data-en="Gil-dong Hong">홍길동</span>
+              <span class="team-role" data-ko="대표 / CEO" data-en="CEO">대표 / CEO</span>
+              <span class="team-country" data-ko="한국" data-en="Korea">한국</span>
+            </div>
+          </div>
+        </article>
+        <article class="team-card" data-country="korea">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&auto=format&fit=crop&q=70" alt="COO" loading="lazy" />
+            <div class="team-overlay">
+              <span class="team-name" data-ko="김서연" data-en="Seo-yeon Kim">김서연</span>
+              <span class="team-role" data-ko="운영총괄 / COO" data-en="COO">운영총괄 / COO</span>
+              <span class="team-country" data-ko="한국" data-en="Korea">한국</span>
+            </div>
+          </div>
+        </article>
+        <article class="team-card" data-country="korea">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&auto=format&fit=crop&q=70" alt="CTO" loading="lazy" />
+            <div class="team-overlay">
+              <span class="team-name" data-ko="이준호" data-en="Jun-ho Lee">이준호</span>
+              <span class="team-role" data-ko="기술총괄 / CTO" data-en="CTO">기술총괄 / CTO</span>
+              <span class="team-country" data-ko="한국" data-en="Korea">한국</span>
+            </div>
+          </div>
+        </article>
+        <article class="team-card" data-country="vietnam">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=70" alt="Vietnam Lead" loading="lazy" />
+            <div class="team-overlay">
+              <span class="team-name" data-ko="Nguyen Minh" data-en="Nguyen Minh">Nguyen Minh</span>
+              <span class="team-role" data-ko="베트남 지사장 / Country Lead" data-en="Country Lead, Vietnam">베트남 지사장 / Country Lead</span>
+              <span class="team-country" data-ko="베트남" data-en="Vietnam">베트남</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Section 05. CAREER ========== -->
+  <section id="career" class="career">
+    <div class="container">
+      <span class="section-label" data-ko="CAREER" data-en="CAREER">CAREER</span>
+      <h2 class="section-title"
+          data-ko="IVE와 함께<br>성장할 동료를 찾습니다."
+          data-en="Looking for teammates<br>to grow with IVE.">
+        IVE와 함께<br>성장할 동료를 찾습니다.
+      </h2>
+
+      <!-- 인재상 -->
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">✦</div>
+          <h3 data-ko="주도성" data-en="Initiative">주도성</h3>
+          <p data-ko="스스로 문제를 정의하고 끝까지 해결하는 사람"
+             data-en="Those who define problems and solve them to the end.">
+            스스로 문제를 정의하고 끝까지 해결하는 사람
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">✧</div>
+          <h3 data-ko="협업" data-en="Collaboration">협업</h3>
+          <p data-ko="다른 관점을 존중하고 함께 더 나은 답을 만드는 사람"
+             data-en="Those who respect other perspectives and build better answers together.">
+            다른 관점을 존중하고 함께 더 나은 답을 만드는 사람
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">✹</div>
+          <h3 data-ko="성장" data-en="Growth">성장</h3>
+          <p data-ko="어제의 자신을 넘어서기 위해 꾸준히 배우는 사람"
+             data-en="Those who learn steadily to surpass yesterday's self.">
+            어제의 자신을 넘어서기 위해 꾸준히 배우는 사람
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">✺</div>
+          <h3 data-ko="정직" data-en="Integrity">정직</h3>
+          <p data-ko="과정과 결과 모두에 떳떳한 기준을 가진 사람"
+             data-en="Those who hold honest standards in both process and outcome.">
+            과정과 결과 모두에 떳떳한 기준을 가진 사람
+          </p>
+        </div>
+      </div>
+
+      <!-- 채용공고 목록 -->
+      <div class="job-head">
+        <span class="section-label" data-ko="OPEN POSITIONS" data-en="OPEN POSITIONS">OPEN POSITIONS</span>
+      </div>
+      <div id="job-list" class="job-list" aria-live="polite">
+        <!-- careers.json에서 동적 렌더링 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Section 06. FOOTER ========== -->
+  <footer id="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <img class="footer-logo" src="assets/images/ive_company_logo.png" alt="IVE Company" />
+        <p class="footer-tag" data-ko="기술과 사람을 연결합니다."
+                              data-en="Connecting technology and people.">
+          기술과 사람을 연결합니다.
+        </p>
+        <p class="footer-contact">contact@ivecompany.kr</p>
+        <p class="footer-addr" data-ko="서울특별시 관악구 관악로 168, 대우디오슈페리움2단지 409호"
+                               data-en="#409, Daewoo Dio Superium 2, 168 Gwanak-ro, Gwanak-gu, Seoul, Korea">
+          서울특별시 관악구 관악로 168, 대우디오슈페리움2단지 409호
+        </p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer 메뉴">
+        <span class="footer-nav-label" data-ko="SITEMAP" data-en="SITEMAP">SITEMAP</span>
+        <a href="#home" data-ko="Home" data-en="Home">Home</a>
+        <a href="#about" data-ko="About" data-en="About">About</a>
+        <a href="#team" data-ko="Team" data-en="Team">Team</a>
+        <a href="#career" data-ko="Career" data-en="Career">Career</a>
+      </nav>
+
+      <!-- Contact Form (Formspree 연동 예정) -->
+      <form class="footer-form" action="https://formspree.io/f/xxxxx" method="POST" novalidate>
+        <span class="footer-nav-label" data-ko="CONTACT" data-en="CONTACT">CONTACT</span>
+        <input type="text" name="name" required
+               data-ko-placeholder="이름" data-en-placeholder="Name"
+               placeholder="이름" />
+        <input type="email" name="email" required
+               data-ko-placeholder="이메일" data-en-placeholder="Email"
+               placeholder="이메일" />
+        <textarea name="message" rows="4" required
+                  data-ko-placeholder="메시지"
+                  data-en-placeholder="Message"
+                  placeholder="메시지"></textarea>
+        <button type="submit" class="btn-primary"
+                data-ko="보내기" data-en="Send">보내기</button>
+      </form>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 IVE Company LTD. ALL RIGHTS RESERVED</span>
+      <span class="footer-social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="GitHub">GitHub</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- App Scripts -->
+  <script src="js/lang.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/career.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

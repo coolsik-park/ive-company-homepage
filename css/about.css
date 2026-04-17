@@ -1,0 +1,349 @@
+/* ========================================================================
+   About Section + Business Tabs + Portfolio + Numbers
+   ======================================================================== */
+.about {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+.about .section-desc { color: #555; }
+
+/* ------------------------------------------------------------------
+   Business Tabs — 왼쪽 세로 탭 + 오른쪽 콘텐츠 패널
+   ------------------------------------------------------------------ */
+.biz-tabs {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 48px;
+  margin-bottom: 120px;
+}
+
+/* ---------- Tab list (왼쪽) ---------- */
+.biz-tablist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+.biz-tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 24px;
+  background: #fff;
+  border: 1px solid var(--color-border-light);
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: var(--color-text-dark);
+  text-align: left;
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.biz-tab:hover {
+  border-color: rgba(0, 87, 255, 0.4);
+  transform: translateX(4px);
+}
+
+.biz-tab-label {
+  flex: 1;
+  min-width: 0;
+}
+
+.biz-tab-arrow {
+  font-size: 14px;
+  color: #999;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition:
+    opacity var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+
+.biz-tab:hover .biz-tab-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.biz-tab.is-active {
+  background: var(--color-text-dark);
+  color: var(--color-text-white);
+  border-color: var(--color-text-dark);
+  box-shadow: 0 14px 34px -18px rgba(0, 0, 0, 0.4);
+}
+.biz-tab.is-active .biz-tab-arrow {
+  color: var(--color-accent);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.biz-tab:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Panels (오른쪽) ---------- */
+.biz-panels {
+  position: relative;
+  min-height: 420px;
+}
+
+.biz-panel {
+  padding: 48px 48px 40px;
+  background: #fff;
+  border: 1px solid var(--color-border-light);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px -40px rgba(0, 0, 0, 0.2);
+  animation: bizPanelIn 0.45s var(--ease-out);
+}
+
+.biz-panel[hidden] { display: none; }
+
+@keyframes bizPanelIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.biz-panel-head {
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.biz-panel-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.biz-panel-title {
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  color: var(--color-text-dark);
+  margin-bottom: 12px;
+}
+
+.biz-panel-lead {
+  max-width: 640px;
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.7;
+  color: #555;
+}
+
+/* ---------- Panel blocks ---------- */
+.biz-block {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.biz-block:last-child { border-bottom: 0; }
+
+.biz-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  padding-top: 4px;
+}
+
+.biz-block-body {
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.7;
+  color: var(--color-text-dark);
+}
+
+.biz-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.biz-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-text-dark);
+}
+
+.biz-list li::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 8px;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .biz-tabs {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .biz-tablist {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .biz-tablist::-webkit-scrollbar { display: none; }
+  .biz-tab {
+    flex: 0 0 auto;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  .biz-tab-arrow { display: none; }
+  .biz-panel { padding: 36px 28px; }
+  .biz-block { grid-template-columns: 1fr; gap: 10px; }
+  .biz-kicker { padding-top: 0; }
+}
+
+/* ------------------------------------------------------------------
+   Portfolio
+   ------------------------------------------------------------------ */
+.portfolio-head {
+  margin-top: 40px;
+  margin-bottom: 48px;
+}
+
+.portfolio-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  color: var(--color-text-dark);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  background: #fff;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.portfolio-item:hover { transform: translateY(-4px); }
+
+.portfolio-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.portfolio-item:hover .portfolio-thumb { transform: scale(1.06); }
+
+.portfolio-info {
+  padding: 20px 4px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.portfolio-cat {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.portfolio-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+/* ------------------------------------------------------------------
+   Numbers
+   ------------------------------------------------------------------ */
+.numbers {
+  background: var(--color-bg-dark);
+  color: var(--color-text-white);
+  padding: clamp(60px, 8vw, 100px) 0;
+}
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: end;
+}
+
+.num-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+}
+
+.num-value {
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: var(--color-text-white);
+  font-feature-settings: "tnum";
+}
+
+.num-plus {
+  display: inline-block;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700;
+  color: var(--color-accent);
+  vertical-align: top;
+  margin-left: 4px;
+  line-height: 1;
+}
+
+.num-label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-text-gray);
+  margin-top: 12px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+  .numbers-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
+}
+
+@media (max-width: 640px) {
+  .portfolio-grid { grid-template-columns: 1fr; }
+}

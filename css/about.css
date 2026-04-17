@@ -207,30 +207,35 @@
     gap: 20px;
   }
 
-  /* 모바일: 단단한 흰 바탕 segmented control — 확실히 보이게 */
+  /* 모바일: iOS 스타일 segmented control — 3개 탭 모두 시각적으로 균등 */
   .biz-tablist {
     position: static;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: stretch;
     align-self: stretch;
-    gap: 4px;
+    gap: 0;
     padding: 4px;
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 12px;
-    box-shadow: 0 4px 14px -8px rgba(0, 0, 0, 0.08);
-    overflow: visible;
+    background: #ececee;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
   }
 
   .biz-tab {
     flex: 1 1 0;
+    width: auto;
     min-width: 0;
+    min-height: 40px;
     justify-content: center;
-    padding: 12px 8px;
+    align-items: center;
+    padding: 8px 10px;
     font-size: 13px;
     font-weight: 600;
-    color: #666;
+    line-height: 1.2;
+    color: #333;
     background: transparent;
     border: none;
     border-radius: 8px;
@@ -238,25 +243,31 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: center;
+    transition:
+      background var(--dur-fast) var(--ease-out),
+      color var(--dur-fast) var(--ease-out),
+      box-shadow var(--dur-fast) var(--ease-out);
   }
   .biz-tab:hover {
     transform: none;
-    background: rgba(0, 0, 0, 0.04);
-    color: var(--color-text-dark);
+    border-color: transparent;
   }
+
   .biz-tab-label {
     flex: none;
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 1.2;
   }
   .biz-tab-arrow { display: none; }
 
   .biz-tab.is-active {
-    background: var(--color-text-dark);
-    color: var(--color-text-white);
+    background: #ffffff;
+    color: var(--color-text-dark);
     border-color: transparent;
-    box-shadow: 0 4px 12px -6px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.05);
   }
 
   .biz-panel { padding: 32px 24px; border-radius: 12px; }
@@ -269,7 +280,8 @@
   .biz-tab {
     font-size: 12px;
     letter-spacing: -0.3px;
-    padding: 11px 6px;
+    padding: 8px 6px;
+    min-height: 38px;
   }
   .biz-panel { padding: 26px 18px; }
   .biz-panel-title { font-size: 28px; }

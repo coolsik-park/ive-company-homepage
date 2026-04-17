@@ -365,9 +365,10 @@
 
 .num-item {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: flex-start;
-  gap: 8px;
+  column-gap: 6px;
+  row-gap: 0;
   position: relative;
 }
 
@@ -385,12 +386,14 @@
   font-size: clamp(28px, 3.5vw, 44px);
   font-weight: 700;
   color: var(--color-accent);
-  vertical-align: top;
-  margin-left: 4px;
   line-height: 1;
+  /* flex-item이므로 플러스를 숫자 상단에 살짝 띄움 (수퍼스크립트 느낌) */
+  align-self: flex-start;
+  margin-top: 4px;
 }
 
 .num-label {
+  flex: 0 0 100%;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1px;

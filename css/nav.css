@@ -35,12 +35,12 @@
   z-index: 2;
 }
 #main-nav .logo img {
-  height: 32px;
+  height: 44px;
   width: auto;
   filter: invert(1);
-  transition: transform var(--dur-fast) var(--ease-out);
+  transition: transform var(--dur-fast) var(--ease-out), height var(--dur-base) var(--ease-out);
 }
-#main-nav.scrolled .logo img { height: 28px; }
+#main-nav.scrolled .logo img { height: 36px; }
 #main-nav .logo:hover img { transform: scale(1.04); }
 
 /* Nav links */

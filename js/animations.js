@@ -142,7 +142,15 @@
         duration: 0.9,
         ease: 'power3.out',
         stagger: 0.1,
-        scrollTrigger: { trigger: container, start: 'top 82%' },
+        /* 끝난 뒤 inline transform/opacity 제거 — 레이아웃 오프셋 잔존 방지 */
+        clearProps: 'transform,opacity',
+        scrollTrigger: {
+          trigger: container,
+          start: 'top 82%',
+          /* 이미 뷰포트 안이면 즉시 재생, 한 번만 */
+          once: true,
+          toggleActions: 'play none none none',
+        },
       });
     });
 

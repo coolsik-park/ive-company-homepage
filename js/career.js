@@ -18,8 +18,8 @@
       typeLabel: '형태',
       deadlineUnit: '까지',
       empty: '현재 모집중인 포지션이 없습니다.',
-      emptySub: '관심 직군은 언제든',
-      emptyTail: '로 문의해주세요.',
+      emptyBody: '관심 직군은 언제든 문의해주세요.',
+      contact: 'Contact',
       apply: '지원',
     },
     en: {
@@ -28,8 +28,8 @@
       typeLabel: 'Type',
       deadlineUnit: '',
       empty: 'No open positions at the moment.',
-      emptySub: 'Feel free to reach out at',
-      emptyTail: ' anytime.',
+      emptyBody: 'Feel free to reach out anytime.',
+      contact: 'Contact',
       apply: 'Apply',
     },
   };
@@ -63,8 +63,12 @@
     const t = STRINGS[lang];
     list.innerHTML = `
       <div class="job-empty">
-        ${escapeHTML(t.empty)}<br>
-        ${escapeHTML(t.emptySub)} <a href="mailto:${CONTACT}">${CONTACT}</a>${escapeHTML(t.emptyTail)}
+        <p class="job-empty-head">${escapeHTML(t.empty)}</p>
+        <p class="job-empty-sub">${escapeHTML(t.emptyBody)}</p>
+        <a class="contact-pill" href="mailto:${CONTACT}" aria-label="Contact IVE Company via email">
+          <span>${escapeHTML(t.contact)}</span>
+          <span class="contact-pill-arrow" aria-hidden="true">→</span>
+        </a>
       </div>
     `;
   }

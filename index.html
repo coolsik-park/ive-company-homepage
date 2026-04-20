@@ -36,19 +36,18 @@
     <a href="#home" class="logo" aria-label="IVE Company">
       <img src="assets/images/ive_company_logo.png" alt="IVE Company" />
     </a>
-    <ul class="nav-links">
-      <li><a href="#home" data-ko="Home" data-en="Home">Home</a></li>
-      <li><a href="#about" data-ko="About" data-en="About">About</a></li>
-      <li><a href="#team" data-ko="Team" data-en="Team">Team</a></li>
-      <li><a href="#career" data-ko="Career" data-en="Career">Career</a></li>
-    </ul>
     <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#home" data-ko="Home" data-en="Home">Home</a></li>
+        <li><a href="#about" data-ko="About" data-en="About">About</a></li>
+        <li><a href="#team" data-ko="Team" data-en="Team">Team</a></li>
+        <li><a href="#career" data-ko="Career" data-en="Career">Career</a></li>
+      </ul>
       <button id="lang-toggle" aria-label="언어 전환">
         <span class="lang-opt" data-val="ko">KO</span>
         <span class="lang-sep">|</span>
         <span class="lang-opt" data-val="en">EN</span>
       </button>
-      <a href="#footer" class="btn-contact" data-ko="Contact" data-en="Contact">Contact</a>
     </div>
     <button class="hamburger" aria-label="메뉴 열기" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -304,30 +303,6 @@
     </div>
   </section>
 
-  <!-- ========== Section 03. NUMBERS ========== -->
-  <section id="numbers" class="numbers">
-    <div class="container">
-      <div class="numbers-grid">
-        <div class="num-item">
-          <span class="num-value" data-target="2018" data-plain="true">0</span>
-          <span class="num-label" data-ko="설립년도" data-en="Founded">설립년도</span>
-        </div>
-        <div class="num-item">
-          <span class="num-value" data-target="50">0</span><span class="num-plus">+</span>
-          <span class="num-label" data-ko="완료 프로젝트" data-en="Projects Delivered">완료 프로젝트</span>
-        </div>
-        <div class="num-item">
-          <span class="num-value" data-target="25">0</span><span class="num-plus">+</span>
-          <span class="num-label" data-ko="파트너사" data-en="Partners">파트너사</span>
-        </div>
-        <div class="num-item">
-          <span class="num-value" data-target="30">0</span><span class="num-plus">+</span>
-          <span class="num-label" data-ko="팀 멤버" data-en="Team Members">팀 멤버</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ========== Section 04. TEAM ========== -->
   <section id="team" class="team">
     <div class="container">
@@ -338,29 +313,7 @@
         최고의 팀이<br>최고의 결과를 만듭니다.
       </h2>
 
-      <!-- 지역 필터 -->
-      <div class="team-filter" role="tablist" aria-label="팀 지역 필터">
-        <button class="team-tab is-active"
-                role="tab" type="button"
-                aria-selected="true" data-filter="all">
-          <span data-ko="전체" data-en="All">전체</span>
-          <span class="team-tab-count" data-count-for="all">4</span>
-        </button>
-        <button class="team-tab"
-                role="tab" type="button"
-                aria-selected="false" tabindex="-1" data-filter="korea">
-          <span data-ko="한국" data-en="Korea">한국</span>
-          <span class="team-tab-count" data-count-for="korea">3</span>
-        </button>
-        <button class="team-tab"
-                role="tab" type="button"
-                aria-selected="false" tabindex="-1" data-filter="vietnam">
-          <span data-ko="베트남" data-en="Vietnam">베트남</span>
-          <span class="team-tab-count" data-count-for="vietnam">1</span>
-        </button>
-      </div>
-
-      <div class="team-grid" data-active-filter="all">
+      <div class="team-grid">
         <article class="team-card" data-country="korea">
           <div class="team-photo">
             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=70" alt="CEO" loading="lazy" />
@@ -415,18 +368,13 @@
         IVE와 함께<br>성장할 동료를 찾습니다.
       </h2>
       <p class="section-desc career-lead"
-         data-ko="우리는 명확한 기준과 유연한 태도를 동시에 가진 사람을 찾습니다. 네 가지 가치는 IVE에서 함께 일하는 모든 과정의 기준이 됩니다."
-         data-en="We look for people who are both principled and adaptable. These four values anchor every moment of working together at IVE.">
-        우리는 명확한 기준과 유연한 태도를 동시에 가진 사람을 찾습니다. 네 가지 가치는 IVE에서 함께 일하는 모든 과정의 기준이 됩니다.
+         data-ko="우리는 명확한 기준과 유연한 태도를 동시에 가진 사람을 찾습니다."
+         data-en="We look for people who are both principled and adaptable.">
+        우리는 명확한 기준과 유연한 태도를 동시에 가진 사람을 찾습니다.
       </p>
 
       <div class="values-head">
-        <span class="section-label" data-ko="VALUES" data-en="VALUES">VALUES</span>
-        <h3 class="values-title"
-            data-ko="우리가 추구하는 네 가지 가치"
-            data-en="Four values we pursue">
-          우리가 추구하는 네 가지 가치
-        </h3>
+        <span class="section-label" data-ko="CORE VALUE" data-en="CORE VALUE">CORE VALUE</span>
       </div>
 
       <!-- 인재상 -->
@@ -441,10 +389,10 @@
         </div>
         <div class="value-card">
           <div class="value-icon" aria-hidden="true">✧</div>
-          <h3 data-ko="협업" data-en="Collaboration">협업</h3>
-          <p data-ko="다른 관점을 존중하고 함께 더 나은 답을 만드는 사람"
-             data-en="Those who respect other perspectives and build better answers together.">
-            다른 관점을 존중하고 함께 더 나은 답을 만드는 사람
+          <h3 data-ko="협업 + 논리적 사고" data-en="Collaboration + Logical Thinking">협업 + 논리적 사고</h3>
+          <p data-ko="다른 관점을 존중하면서도, 근거와 논리로 더 나은 답을 함께 만드는 사람"
+             data-en="Those who respect diverse perspectives and build better answers together through evidence and logic.">
+            다른 관점을 존중하면서도, 근거와 논리로 더 나은 답을 함께 만드는 사람
           </p>
         </div>
         <div class="value-card">

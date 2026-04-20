@@ -9,67 +9,6 @@
 .team .section-title { color: var(--color-text-white); }
 .team .section-desc  { color: var(--color-text-gray); }
 
-/* ---------- Filter Tabs ---------- */
-.team-filter {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px;
-  margin: 8px 0 40px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-.team-tab {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 22px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.1px;
-  color: var(--color-text-gray);
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  transition:
-    background var(--dur-fast) var(--ease-out),
-    color var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out);
-}
-
-.team-tab:hover { color: var(--color-text-white); }
-
-.team-tab.is-active {
-  background: var(--color-text-white);
-  color: var(--color-text-dark);
-}
-
-.team-tab:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 3px;
-}
-
-.team-tab-count {
-  font-size: 11px;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  color: inherit;
-  letter-spacing: 0.5px;
-  min-width: 22px;
-  text-align: center;
-}
-
-.team-tab.is-active .team-tab-count {
-  background: rgba(0, 87, 255, 0.12);
-  color: var(--color-accent);
-}
-
 /* ---------- Grid ---------- */
 .team-grid {
   display: grid;
@@ -85,18 +24,6 @@
   transition:
     opacity var(--dur-base) var(--ease-out),
     transform var(--dur-base) var(--ease-out);
-}
-
-.team-card.is-hidden {
-  opacity: 0;
-  transform: scale(0.96);
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
 }
 
 .team-photo {
@@ -171,29 +98,7 @@
 }
 
 @media (max-width: 640px) {
-  /* 모바일: 필터를 가로 전체 폭의 segmented control 로 */
-  .team-filter {
-    display: flex;
-    width: 100%;
-    padding: 5px;
-    gap: 4px;
-    margin: 8px 0 28px;
-  }
-  .team-tab {
-    flex: 1 1 0;
-    min-width: 0;
-    justify-content: center;
-    padding: 10px 8px;
-    font-size: 13px;
-    letter-spacing: -0.2px;
-  }
-  .team-tab-count {
-    font-size: 10px;
-    padding: 1px 6px;
-    min-width: 20px;
-  }
-
-  /* 팀 카드도 좌우 슬라이드로 — 다음 카드 살짝 보이는 peek */
+  /* 팀 카드 좌우 슬라이드 — 다음 카드 살짝 보이는 peek */
   .team-grid {
     display: flex;
     flex-direction: row;
@@ -221,16 +126,8 @@
     margin-right: calc(var(--container-pad) - 12px);
   }
 
-  /* 필터로 가려진 카드는 슬라이더 폭에서 제외 (이미 width/height 0 처리됨) */
-  .team-card.is-hidden { flex: 0 0 0; max-width: 0; }
-
   .team-overlay { transform: translateY(0); opacity: 1; padding: 14px; }
   .team-name { font-size: 15px; }
   .team-role { font-size: 11px; letter-spacing: 1px; }
   .team-country { font-size: 10px; letter-spacing: 1.5px; }
-}
-
-@media (max-width: 380px) {
-  .team-tab { padding: 9px 4px; font-size: 12px; }
-  .team-tab-count { display: none; }
 }

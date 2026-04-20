@@ -393,65 +393,9 @@
   text-overflow: ellipsis;
 }
 
-/* ------------------------------------------------------------------
-   Numbers
-   ------------------------------------------------------------------ */
-.numbers {
-  background: var(--color-bg-dark);
-  color: var(--color-text-white);
-  padding: clamp(60px, 8vw, 100px) 0;
-}
-
-.numbers-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  align-items: end;
-}
-
-.num-item {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  column-gap: 6px;
-  row-gap: 0;
-  position: relative;
-}
-
-.num-value {
-  font-size: clamp(48px, 7vw, 88px);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -2px;
-  color: var(--color-text-white);
-  font-feature-settings: "tnum";
-}
-
-.num-plus {
-  display: inline-block;
-  font-size: clamp(28px, 3.5vw, 44px);
-  font-weight: 700;
-  color: var(--color-accent);
-  line-height: 1;
-  /* flex-item이므로 플러스를 숫자 상단에 살짝 띄움 (수퍼스크립트 느낌) */
-  align-self: flex-start;
-  margin-top: 4px;
-}
-
-.num-label {
-  flex: 0 0 100%;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--color-text-gray);
-  margin-top: 12px;
-}
-
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
-  .numbers-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
 }
 
 /* 모바일: 포트폴리오를 좌우 슬라이드 (다음 카드 살짝 보이는 peek) */

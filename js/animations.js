@@ -25,45 +25,6 @@
     });
   }
 
-  /* ---------- Numbers (순수 JS로 항상 동작) ---------- */
-  function initCountUp() {
-    const values = document.querySelectorAll('.num-value[data-target]');
-    if (!values.length) return;
-
-    const format = (n, isPlain) => (isPlain ? String(n) : n.toLocaleString('ko-KR'));
-
-    function animate(el) {
-      const target = parseInt(el.dataset.target, 10);
-      if (!Number.isFinite(target)) return;
-      const isPlain = el.dataset.plain === 'true';
-      if (prefersReduced) { el.textContent = format(target, isPlain); return; }
-
-      const duration = 1400;
-      const start = performance.now();
-
-      function tick(now) {
-        const elapsed = now - start;
-        const p = Math.min(1, elapsed / duration);
-        // easeOutCubic
-        const eased = 1 - Math.pow(1 - p, 3);
-        const current = Math.round(target * eased);
-        el.textContent = format(current, isPlain);
-        if (p < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    }
-
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        animate(entry.target);
-        obs.unobserve(entry.target);
-      });
-    }, { threshold: 0.4 });
-
-    values.forEach((el) => io.observe(el));
-  }
-
   /* ---------- GSAP 기반 애니메이션 ---------- */
   function initGSAP() {
     gsap.registerPlugin(ScrollTrigger);
@@ -105,7 +66,7 @@
     // 섹션 공통 타이틀/설명 페이드인
     const commonTargets = [
       '.about .section-label', '.about .section-title', '.about .section-desc',
-      '.team .section-label', '.team .section-title', '.team .team-filter',
+      '.team .section-label', '.team .section-title',
       '.career .section-label', '.career .section-title',
       '.portfolio-head .section-label', '.portfolio-head .portfolio-title',
       '.job-head .section-label',
@@ -129,7 +90,6 @@
       { parent: '.portfolio-grid', items: '.portfolio-item' },
       { parent: '.team-grid', items: '.team-card' },
       { parent: '.values-grid', items: '.value-card' },
-      { parent: '.numbers-grid', items: '.num-item' },
     ];
     staggerGroups.forEach(({ parent, items }) => {
       const container = document.querySelector(parent);
@@ -182,11 +142,9 @@
   function boot() {
     if (prefersReduced || !hasScrollTrigger) {
       revealAllWithoutAnim();
-      initCountUp();
       return;
     }
     initGSAP();
-    initCountUp();
   }
 
   if (document.readyState === 'loading') {

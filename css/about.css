@@ -78,6 +78,8 @@
 }
 
 .biz-tab.is-active {
+  /* 탭 자체가 다크 pill — 내부 accent 참조는 크림으로 로컬 전환 */
+  --color-accent: #FBF2D9;
   background: var(--color-text-dark);
   color: var(--color-text-white);
   border-color: var(--color-text-dark);

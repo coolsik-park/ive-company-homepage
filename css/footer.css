@@ -38,13 +38,37 @@
   max-width: 320px;
 }
 
-.footer-contact {
-  font-size: 15px;
-  color: var(--color-accent);
-  font-weight: 600;
-  letter-spacing: 0.2px;
+/* Contact 버튼 — 크림 pill CTA */
+.footer-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-accent-contrast);
+  background: var(--color-accent);
+  border-radius: 999px;
+  align-self: flex-start;
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
 }
-.footer-contact:hover { text-decoration: underline; }
+.footer-contact-btn:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -12px rgba(251, 242, 217, 0.45);
+}
+.footer-contact-btn-arrow {
+  display: inline-block;
+  font-size: 14px;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.footer-contact-btn:hover .footer-contact-btn-arrow { transform: translateX(4px); }
 
 .footer-addr {
   font-size: 13px;

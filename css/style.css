@@ -9,8 +9,12 @@
   --color-bg-dark:    #0D0D0D;
   --color-bg-card:    #1A1A1A;
   --color-bg-light:   #F7F7F7;
+
+  /* 라이트 섹션 기본 — 블루 액센트 */
   --color-accent:     #0057FF;
   --color-accent-hover: #003dc7;
+  --color-accent-contrast: #FFFFFF; /* accent 배경 위 텍스트 색 */
+
   --color-text-white: #FFFFFF;
   --color-text-gray:  #999999;
   --color-text-dark:  #111111;
@@ -31,6 +35,19 @@
   --dur-fast: 0.25s;
   --dur-base: 0.45s;
   --dur-slow: 0.8s;
+}
+
+/* ----------
+   다크 섹션(Hero / Team / Footer / Nav)에서는 액센트 컬러를 크림톤으로 자동 전환.
+   이 섹션들 내부의 어떤 요소든 var(--color-accent)를 참조하면 아래 값이 적용됨.
+   ---------- */
+.hero,
+.team,
+#footer,
+#main-nav {
+  --color-accent: #FBF2D9;        /* 크림 / 웜 베이지 */
+  --color-accent-hover: #e9ddb8;
+  --color-accent-contrast: #111111; /* 크림 배경 위 어두운 텍스트 */
 }
 
 /* ---------- Reset ---------- */
@@ -133,7 +150,7 @@ section {
 
 .btn-primary {
   background: var(--color-accent);
-  color: var(--color-text-white);
+  color: var(--color-accent-contrast);
 }
 .btn-primary:hover { background: var(--color-accent-hover); transform: translateY(-2px); }
 

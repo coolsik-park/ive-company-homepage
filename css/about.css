@@ -8,6 +8,17 @@
 
 .about .section-desc { color: #555; }
 
+/* About 섹션 전용 — 리드 문구 스타일 (기본 section-title 보다 작음) */
+.about .about-title {
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.4px;
+  color: var(--color-text-dark);
+  margin-bottom: 56px;
+  max-width: 820px;
+}
+
 /* ------------------------------------------------------------------
    Business Tabs — 왼쪽 세로 탭 + 오른쪽 콘텐츠 패널
    ------------------------------------------------------------------ */

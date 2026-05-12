@@ -98,7 +98,6 @@
   }
 
   function boot() {
-    initCursor();
     initYear();
     initFooterForm();
   }

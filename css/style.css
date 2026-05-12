@@ -102,12 +102,16 @@ section {
 /* ---------- Common Typography ---------- */
 .section-label {
   display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 900;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: #000;
   margin-bottom: 24px;
+}
+
+.team .section-label {
+  color: var(--color-accent);
 }
 
 .section-title {

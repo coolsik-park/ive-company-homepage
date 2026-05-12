@@ -4,7 +4,7 @@
 #footer {
   background: var(--color-bg-dark);
   color: var(--color-text-white);
-  padding: clamp(64px, 8vw, 96px) 0 0;
+  padding: 32px 0 0;
   border-top: 1px solid var(--color-border);
 }
 
@@ -12,8 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
-  padding-bottom: 56px;
+  gap: 24px;
+  padding-bottom: 24px;
   flex-wrap: wrap;
 }
 
@@ -31,8 +31,20 @@
   filter: invert(1);
 }
 
-/* Contact pill 위치만 미세 조정 */
-#footer .contact-pill { margin-top: 0; }
+/* Contact pill — footer-nav 내부 inline 사이즈/대비 강화 */
+#footer .contact-pill {
+  margin: 0 0 0 12px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  background: #fff;
+  color: #0D0D0D;
+}
+#footer .contact-pill:hover {
+  background: var(--color-accent);
+  color: #111;
+}
 
 /* ---------- Links 영역 (사이트맵 + 소셜 세로 스택) ---------- */
 .footer-links {
@@ -87,7 +99,7 @@
 
 /* ---------- Bottom ---------- */
 .footer-bottom {
-  padding: 24px var(--container-pad);
+  padding: 16px var(--container-pad);
   max-width: var(--container-max);
   margin: 0 auto;
   border-top: 1px solid var(--color-border);
@@ -111,8 +123,8 @@
 }
 
 @media (max-width: 640px) {
-  #footer { padding-top: 56px; }
-  .footer-logo { width: 160px; }
-  .footer-bottom { padding: 20px var(--container-pad); }
+  #footer { padding-top: 24px; }
+  .footer-logo { width: 140px; }
+  .footer-bottom { padding: 14px var(--container-pad); }
   .footer-social { gap: 16px; }
 }

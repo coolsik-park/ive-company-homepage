@@ -22,7 +22,7 @@
   --color-border-light: rgba(0, 0, 0, 0.08);
 
   /* Typography */
-  --font-sans: 'Inter', 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-sans: 'Inter', 'Noto Sans KR', 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif;
 
   /* Layout */
   --container-max: 1280px;

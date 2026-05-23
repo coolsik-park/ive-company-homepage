@@ -39,25 +39,14 @@
       delay: 0.15,
     });
 
-    gsap.from('.hero-label', { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out', delay: 0.05 });
-    gsap.from('.hero-sub',   { opacity: 0, y: 20, duration: 0.9, ease: 'power3.out', delay: 0.55 });
     gsap.from('.hero-btns > *', { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out', stagger: 0.1, delay: 0.75 });
     gsap.from('.scroll-indicator', { opacity: 0, duration: 1, delay: 1.2, ease: 'power2.out' });
 
     // Hero overlay parallax (스크롤에 따라 살짝 이동)
     const heroOverlay = document.querySelector('.hero-overlay');
-    const heroVideo = document.querySelector('.hero-video');
     if (heroOverlay) {
       gsap.to(heroOverlay, {
         yPercent: 15,
-        ease: 'none',
-        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
-      });
-    }
-    if (heroVideo) {
-      gsap.to(heroVideo, {
-        yPercent: 10,
-        scale: 1.08,
         ease: 'none',
         scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
       });

@@ -164,6 +164,14 @@
   color: var(--color-text-dark);
 }
 
+.biz-panel-logo {
+  display: block;
+  width: clamp(180px, 22vw, 260px);
+  height: auto;
+  margin-bottom: 24px;
+  user-select: none;
+}
+
 /* ---------- Panel blocks ---------- */
 .biz-block {
   display: grid;

@@ -108,3 +108,19 @@
     boot();
   }
 })();
+
+/* ---------- Notice Popup: 오늘 하루 보지 않기 ---------- */
+(function () {
+  const popup = document.getElementById('noticePopup');
+  if (!popup) return;
+  const KEY = 'noticeHideDate';
+  const today = new Date().toDateString();
+  let hidden = false;
+  try { hidden = localStorage.getItem(KEY) === today; } catch (e) {}
+  if (!hidden) popup.showModal();
+  popup.addEventListener('close', () => {
+    if (popup.returnValue === 'today') {
+      try { localStorage.setItem(KEY, today); } catch (e) {}
+    }
+  });
+})();

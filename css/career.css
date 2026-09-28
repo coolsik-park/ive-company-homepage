@@ -318,3 +318,6 @@
   .job-arrow { width: 38px; height: 38px; font-size: 16px; }
   .job-meta { gap: 2px 16px; }
 }
+
+/* OPEN POSITIONS 숨김 상태에서는 인재상 아래 여백이 불필요 */
+.values-grid:last-child { margin-bottom: 0; }

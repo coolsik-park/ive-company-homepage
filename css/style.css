@@ -310,6 +310,7 @@ body:has(.notice-popup[open]) { overflow: hidden; }
 
 /* ---------- Notice Section (공지사항 게시판) ---------- */
 .notice-section {
+  padding-top: 0;               /* 앞 섹션(career)도 밝은 배경이라 위 여백 중복 */
   background: var(--color-bg-light);
   color: var(--color-text-dark);
 }

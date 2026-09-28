@@ -29,7 +29,7 @@
 
   <!-- 공고 팝업 -->
   <dialog class="notice-popup" id="noticePopup" aria-labelledby="noticeTitle">
-    <div class="notice-body">
+    <div class="notice-body notice-doc">
       <h2 id="noticeTitle">자본감소에 관한 채권자신고 및 출자지분증서에 관한 공고</h2>
       <p>본 회사는 2026년 09월 10일 사원총회에서 자본금의 총액 <em>금1,125,000,000원</em>을 <em>금525,000,000원</em>으로 감소하고, 그 방법으로 <em>1,125,000좌</em> 중에 <em>600,000좌</em>를 1좌당 <em>금1,000원</em>에 매입하여 임의유상소각하기로 결의하였으므로 이 자본감소에 이의가 있는 채권자는 <strong>2026년 9월 12일부터 2026년 10월 12일까지</strong> 회사로 이의를 제출하시고, 출자지분에 대한 증서를 가진 사원은 출자지분에 대한 증서를 회사로 제출하시기 바랍니다.</p>
       <div class="notice-table-wrap">
@@ -65,6 +65,7 @@
         <li><a href="#about" data-ko="About" data-en="About">About</a></li>
         <li><a href="#team" data-ko="Team" data-en="Team">Team</a></li>
         <li><a href="#career" data-ko="Career" data-en="Career">Career</a></li>
+        <li><a href="#notice" data-ko="Notice" data-en="Notice">Notice</a></li>
       </ul>
       <button id="lang-toggle" aria-label="언어 전환">
         <span class="lang-opt" data-val="ko">KO</span>
@@ -640,7 +641,50 @@
     </div>
   </section>
 
-  <!-- ========== Section 06. FOOTER ========== -->
+  <!-- ========== Section 06. NOTICE (공지사항) ========== -->
+  <section id="notice" class="notice-section">
+    <div class="container">
+      <span class="section-label" data-ko="NOTICE" data-en="NOTICE">NOTICE</span>
+      <h2 class="section-title" data-ko="공지사항" data-en="Notice">공지사항</h2>
+
+      <div class="board">
+        <div class="board-head" aria-hidden="true">
+          <span data-ko="번호" data-en="No.">번호</span>
+          <span data-ko="제목" data-en="Title">제목</span>
+          <span data-ko="등록일" data-en="Date">등록일</span>
+        </div>
+
+        <!-- ponytail: 같은 공고 문구가 상단 팝업에도 있음. 내용 수정 시 두 곳 함께 -->
+        <details class="board-item">
+          <summary>
+            <span class="board-no">1</span>
+            <span class="board-title">자본감소에 관한 채권자신고 및 출자지분증서에 관한 공고</span>
+            <time class="board-date" datetime="2026-09-11">2026.09.11</time>
+          </summary>
+          <div class="board-content notice-doc">
+            <p>본 회사는 2026년 09월 10일 사원총회에서 자본금의 총액 <em>금1,125,000,000원</em>을 <em>금525,000,000원</em>으로 감소하고, 그 방법으로 <em>1,125,000좌</em> 중에 <em>600,000좌</em>를 1좌당 <em>금1,000원</em>에 매입하여 임의유상소각하기로 결의하였으므로 이 자본감소에 이의가 있는 채권자는 <strong>2026년 9월 12일부터 2026년 10월 12일까지</strong> 회사로 이의를 제출하시고, 출자지분에 대한 증서를 가진 사원은 출자지분에 대한 증서를 회사로 제출하시기 바랍니다.</p>
+            <div class="notice-table-wrap">
+              <table>
+                <thead><tr><th>구분</th><th>변경전</th><th>변경후</th></tr></thead>
+                <tbody>
+                  <tr><td>출자좌수</td><td>1,125,000좌</td><td>525,000좌</td></tr>
+                  <tr><td>자본금의 총액</td><td>금1,125,000,000원</td><td>금525,000,000원</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="notice-date">2026년 09월 11일</p>
+            <address>
+              유한회사 아이브컴퍼니<br />
+              서울특별시 관악구 관악로 168, 4층 409-14호 (봉천동, 대우디오슈페리움2단지)<br />
+              대표이사 김 도 형
+            </address>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Section 07. FOOTER ========== -->
   <footer id="footer">
     <div class="container footer-top">
       <div class="footer-brand">
@@ -660,6 +704,7 @@
           <a href="#about" data-ko="About" data-en="About">About</a>
           <a href="#team" data-ko="Team" data-en="Team">Team</a>
           <a href="#career" data-ko="Career" data-en="Career">Career</a>
+          <a href="#notice" data-ko="Notice" data-en="Notice">Notice</a>
           <a class="contact-pill" href="mailto:contact@ivecompany.kr" aria-label="Contact IVE Company via email">
             <span data-ko="Contact" data-en="Contact">Contact</span>
             <span class="contact-pill-arrow" aria-hidden="true">→</span>

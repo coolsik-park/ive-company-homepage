@@ -106,7 +106,13 @@
   font-size: 12px;
   letter-spacing: 0.5px;
   color: var(--color-text-gray);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
 }
+.footer-privacy { font-weight: 700; color: var(--color-text-white); }
+.footer-privacy:hover { color: var(--color-accent); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {

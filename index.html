@@ -27,33 +27,6 @@
 </head>
 <body>
 
-  <!-- 공고 팝업 -->
-  <dialog class="notice-popup" id="noticePopup" aria-labelledby="noticeTitle">
-    <div class="notice-body notice-doc">
-      <h2 id="noticeTitle">자본감소에 관한 채권자신고 및 출자지분증서에 관한 공고</h2>
-      <p>본 회사는 2026년 09월 10일 사원총회에서 자본금의 총액 <em>금1,125,000,000원</em>을 <em>금525,000,000원</em>으로 감소하고, 그 방법으로 <em>1,125,000좌</em> 중에 <em>600,000좌</em>를 1좌당 <em>금1,000원</em>에 매입하여 임의유상소각하기로 결의하였으므로 이 자본감소에 이의가 있는 채권자는 <strong>2026년 9월 12일부터 2026년 10월 12일까지</strong> 회사로 이의를 제출하시고, 출자지분에 대한 증서를 가진 사원은 출자지분에 대한 증서를 회사로 제출하시기 바랍니다.</p>
-      <div class="notice-table-wrap">
-        <table>
-          <thead><tr><th>구분</th><th>변경전</th><th>변경후</th></tr></thead>
-          <tbody>
-            <tr><td>출자좌수</td><td>1,125,000좌</td><td>525,000좌</td></tr>
-            <tr><td>자본금의 총액</td><td>금1,125,000,000원</td><td>금525,000,000원</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="notice-date">2026년 09월 11일</p>
-      <address>
-        유한회사 아이브컴퍼니<br />
-        서울특별시 관악구 관악로 168, 4층 409-14호 (봉천동, 대우디오슈페리움2단지)<br />
-        대표이사 김 도 형
-      </address>
-    </div>
-    <form method="dialog" class="notice-actions">
-      <button value="today">오늘 하루 보지 않기</button>
-      <button value="close" autofocus>닫기</button>
-    </form>
-  </dialog>
-
   <!-- Navigation -->
   <nav id="main-nav">
     <a href="#home" class="logo" aria-label="IVE Company">
@@ -654,7 +627,19 @@
           <span data-ko="등록일" data-en="Date">등록일</span>
         </div>
 
-        <!-- ponytail: 같은 공고 문구가 상단 팝업에도 있음. 내용 수정 시 두 곳 함께 -->
+        <details class="board-item">
+          <summary>
+            <span class="board-no">2</span>
+            <span class="board-title" data-ko="개인정보처리방침 제정 안내" data-en="Privacy Policy Announcement">개인정보처리방침 제정 안내</span>
+            <time class="board-date" datetime="2026-11-17">2026.11.17</time>
+          </summary>
+          <div class="board-content notice-doc">
+            <p data-ko="유한회사 아이브컴퍼니 개인정보처리방침(버전 1.0)이 제정되어 <strong>2026년 11월 24일</strong>부터 시행됨을 알려드립니다."
+               data-en="IVE Company’s Privacy Policy (Version 1.0) has been established and will take effect on <strong>November 24, 2026</strong>.">유한회사 아이브컴퍼니 개인정보처리방침(버전 1.0)이 제정되어 <strong>2026년 11월 24일</strong>부터 시행됨을 알려드립니다.</p>
+            <p><a href="privacy.html" data-ko="개인정보처리방침 전문 보기 →" data-en="Read the full Privacy Policy →">개인정보처리방침 전문 보기 →</a></p>
+          </div>
+        </details>
+
         <details class="board-item">
           <summary>
             <span class="board-no">1</span>

@@ -361,3 +361,4 @@ body:has(.notice-popup[open]) { overflow: hidden; }
   .board-no { display: none; }
   .board-date { text-align: left; }
 }
+.notice-doc a { color: var(--color-accent); text-decoration: underline; }

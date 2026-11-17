@@ -30,6 +30,19 @@
       if (typeof value === 'string') el.setAttribute('placeholder', value);
     });
 
+    // href 치환 (언어별 링크 구분)
+    document.querySelectorAll('[data-ko-href], [data-en-href]').forEach((el) => {
+      const value = el.dataset[`${lang}Href`];
+      if (typeof value === 'string') el.setAttribute('href', value);
+    });
+
+    // URL 에 ?lang= 이 있으면 현재 언어로 맞춰 둠 (새로고침/공유 시 일치)
+    const url = new URL(location.href);
+    if (url.searchParams.has('lang')) {
+      url.searchParams.set('lang', lang);
+      history.replaceState(null, '', url);
+    }
+
     // meta description
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
@@ -54,6 +67,9 @@
   }
 
   function initialLang() {
+    const param = new URLSearchParams(location.search).get('lang');
+    if (SUPPORTED.includes(param)) return param;
+
     let stored = null;
     try { stored = localStorage.getItem(STORAGE_KEY); } catch (_) { /* ignore */ }
     if (stored && SUPPORTED.includes(stored)) return stored;
